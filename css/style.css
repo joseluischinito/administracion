@@ -1,0 +1,123 @@
+* { margin: 0 ; padding: 0 ;}
+
+
+a{
+	color: #FFF;
+	text-decoration: none;
+}
+
+body,html{
+	background: url('../imgs/bg.png') ;
+	font-family: Helvetica,Arial;
+}
+
+
+header{
+	display: block;
+	margin: 2em auto 0 auto ;
+	width: 80%;
+}
+
+header nav,header>#logo-h{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+header>#logo-h{
+	width: 18%;
+}
+
+header>#logo-h img,header>#logo-h a{
+	max-width: 100%;
+}
+
+header nav{
+	background: rgba(16,63,117,1);
+	margin-left: 5%;
+	width: 75%;
+	position: relative;
+}
+
+header nav ul{
+	position: relative;
+	display: block;
+	width: 100%;
+	list-style: none;
+}
+
+header nav ul li{
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+}
+
+header nav ul li a{
+	display: block;
+	padding: 1em;
+}
+
+header nav ul li:hover a{
+	background:#0f4c91;
+}
+
+header nav ul li ul{
+	position: absolute;
+	display: block;
+}
+
+header nav ul li ul{
+	min-width: 150px;
+	width: 100%;
+}
+
+header nav ul li ul li{
+	display: block;
+}
+
+header nav ul li ul li:hover a{
+	background: #083d78;
+	text-shadow: 2px 2px 2px #000;
+}
+
+header nav ul li:hover ul{
+	display: block;
+}
+
+header nav ul li ul{
+	display: none;
+}
+
+
+/**/
+
+#login header>#logo-h{
+	display: block;
+	margin:0 auto;
+	width: 30%;
+}
+
+
+#login>#form{
+	display: block;
+	margin:3em auto;
+	width: 30%;
+}
+
+#login>#form form{
+	display: block;
+	width: 100%;
+}
+
+#login>#form input{
+	display: block;
+	margin: 1em auto;
+	font-size: 1.4em;
+	border:0;
+	outline:0;
+	padding: 0.5em;
+	width: 95%;
+}
+
+#login>#form input[type=submit]{
+	width: 50%;
+}
