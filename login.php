@@ -16,9 +16,9 @@
 </header>
 
 <section id="form">
-	<form>
+	<form method="POST" action="brain.php?op=login">
 		<input type="text" name="usr" placeholder="Usuario"/>
-		<input type="password" name="usr" placeholder="Contrase&ntilde;a"/>
+		<input type="password" name="pwd" placeholder="Contrase&ntilde;a"/>
 
 		<input type="submit" value="Entrar"/>
 	</form>

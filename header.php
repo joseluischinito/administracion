@@ -1,3 +1,11 @@
+<?php
+	session_start();
+	if (!isset($_SESSION['admon_usu']) || empty($_SESSION['admon_usu'])){
+		header('Location:/administracion/login.php');
+	}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

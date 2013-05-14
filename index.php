@@ -1,4 +1,5 @@
 <?php
+	require_once('libs/db/MysqliDb.php');
 	require_once('header.php');
 ?>
 
