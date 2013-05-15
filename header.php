@@ -9,9 +9,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+	<meta charset="utf-8" />
+
 	<title>Administracion</title>
 
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
+	<link rel="stylesheet" href="js/alertify/themes/alertify.bootstrap.css" />
+	<link rel="stylesheet" href="js/zebra_datepicker/css/zebra_datepicker_metallic.css">
+	<script src="js/jquery-2.0.min.js"></script>
+
+	<script src="js/ddSlick/ddslick.min.js"></script>
+	<script src="js/zebra_datepicker/js/zebra_datepicker_es.js"></script>
+	<script src="js/alertify/alertify.min.js"></script>
+	<script src="js/spin.min.js"></script>
 
 </head>
 <body>
@@ -23,24 +35,24 @@
 
 <nav>
 	<ul>
-		<li><a href="">Inicio</a></li>
-		<li><a href="">Estado de Resultados</a>
+		<li><a href="/administracion">Inicio</a></li>
+		<li><a href="#">Estado de Resultados</a>
 			<ul>
-				<li><a href="">Consultar</a></li>
-				<li><a href="">Nuevo</a></li>
+				<li><a href="eresultados_consultar.php">Consultar</a></li>
+				<li><a href="eresultados_nuevo.php">Nuevo</a></li>
 			</ul>
 		</li>
-		<li><a href="">Balance General</a>
+		<li><a href="#">Balance General</a>
 			<ul>
-				<li><a href="">Consultar</a></li>
-				<li><a href="">Nuevo</a></li>
+				<li><a href="balance_consultar.php">Consultar</a></li>
+				<li><a href="balance_nuevo.php">Nuevo</a></li>
 			</ul>
 		</li>
 
 		<li><a href="">Otros</a>
 			<ul>
-				<li><a href="">Razones Financieras</a></li>
-				<li><a href="">Estado de Origen y Aplicacion</a></li>
+				<li><a href="razones.php">Razones Financieras</a></li>
+				<li><a href="origen_aplicacion.php">Estado de Origen y Aplicacion</a></li>
 			</ul>
 		</li>
 
@@ -48,3 +60,5 @@
 	</ul>
 </nav>
 </header>
+
+<section id="main">
