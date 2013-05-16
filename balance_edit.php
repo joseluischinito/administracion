@@ -12,6 +12,7 @@
 	$balance = $db->query('SELECT balance.id AS id, balance.fecha_inicio_periodo AS inicio,  balance.fecha_fin_periodo AS fin, empresa.nombre AS empresa FROM balance,empresa WHERE empresa.id = balance.empresa_id AND balance.id = '.$_GET['id'].'');
 
 
+
 	if(count($balance)<=0)
 		header('Location: ./');	
 
