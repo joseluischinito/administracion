@@ -167,7 +167,45 @@ function balance_crear(){
 }
 
 function balance_agregar_operacion(){
-	
+	if(!params_check('id_b') || !params_check('cantidad') || !params_check('cuenta') || !params_check('cargo_abono')){
+		$res =  array('estado' => 2,'msg' => 'Faltan datos' );
+		$response = json_encode($res);
+
+		echo $response;
+		exit();
+	}elseif ($_POST['cantidad'] == 0 || ($_POST['cargo_abono'] !=1 && $_POST['cargo_abono'] !=2) ) {
+		$res =  array('estado' => 2,'msg' => 'Datos invalidos' );
+		$response = json_encode($res);
+
+		echo $response;
+		exit();
+	}
+
+
+	$db = new MysqliDb();
+
+	$op_data = array(
+		'cargo_abono' => $_POST['cargo_abono'],
+		'monto_operacion' => $_POST['cantidad'] ,
+		'cuenta_id' => $_POST['cuenta'],
+		'balance_id' => $_POST['id_b']
+	);
+
+	echo "INSERT INTO operaciont(cargo_abono,monto_operacion,cuenta_id,balance_id) VALUES({$_POST['cargo_abono']},{$_POST['cantidad']},{$_POST['cuenta']},{$_POST['id_b']})";
+
+	if($db->insert('operaciont',$op_data)){
+		$res =  array('estado' => 1);
+		$response = json_encode($res);
+
+		echo $response;
+		exit();
+	}else{
+		$res =  array('estado' => 2,'msg' => 'Error. Vuelve a intentarlo' );
+		$response = json_encode($res);
+
+		echo $response;
+		exit();
+	}
 }
 
 function user_logged(){

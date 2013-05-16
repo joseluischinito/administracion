@@ -32,7 +32,7 @@
 
 	<section id="add-movimiento">	
 
-		<form id="form-movimiento">
+		<form id="form-movimiento" method="POST" action="brain.php?op=b&a=2">
 
 			<section id="cuenta-m">
 				<select id="cuentas-t">
@@ -44,18 +44,19 @@
 					</optgroup>
 				</select>
 
-				<input type="text" id="monto-i" name="cantidad" placeholder="Cantidad" />
+				<input type="text" id="monto-i" name="cantidad" tabindex="1" placeholder="Cantidad" />
 			</section>
 
 			<section id="cargo-t">
-				<input type="radio" id="cargo-c" name="cargo_abono" value="1" checked />
+				<input type="radio" id="cargo-c" name="cargo_abono" tabindex="2" value="1" checked />
 				<label for="cargo-c">Cargo</label>
 				<input type="radio" id="abono-c" name="cargo_abono" value="2" />
 				<label for="abono-c">Abono</label>
 			</section>
 
+			<input type="hidden" id="cta" name="cuenta"/>
 			<input type="hidden" name="id_b" value="<?= $balance[0]['id'] ?>"/>
-			<input type="submit" style="margin-right:0%" value="Agregar" />
+			<input type="submit" style="margin-right:0%" value="Agregar" tabindex="4" />
 
 		</form>
 
