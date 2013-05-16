@@ -29,6 +29,9 @@ switch ($op) {
 			case '1':
 				balance_crear();
 				break;
+			case '2':
+				balance_agregar_operacion();
+				break;
 			default:
 				echo '404';
 				break;
@@ -153,7 +156,7 @@ function balance_crear(){
 			echo $response;
 		}
 
-	}else{
+	}else{ //La empresa no existe
 		$res =  array('estado' => 2,'msg' => 'No existe esa empresa' );
 		$response = json_encode($res);
 
@@ -163,7 +166,9 @@ function balance_crear(){
 
 }
 
-
+function balance_agregar_operacion(){
+	
+}
 
 function user_logged(){
 	if(!isset($_SESSION['admon_usu']) || empty($_SESSION['admon_usu']))

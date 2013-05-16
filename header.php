@@ -18,9 +18,21 @@
 	<link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
 	<link rel="stylesheet" href="js/alertify/themes/alertify.bootstrap.css" />
 	<link rel="stylesheet" href="js/zebra_datepicker/css/zebra_datepicker_metallic.css">
+	<link href="js/selectbox/css/jquery.selectbox.css" type="text/css" rel="stylesheet" />
+
+	<link href="js/picker/jquery.fs.picker.css" type="text/css" rel="stylesheet" />
+
+
+
 	<script src="js/jquery-2.0.min.js"></script>
 
 	<script src="js/ddSlick/ddslick.min.js"></script>
+	
+
+
+	<script src="js/picker/jquery.fs.picker.min.js"></script>
+
+	<script type="text/javascript" src="js/selectbox/js/jquery.selectbox-0.2.js"></script>
 	<script src="js/zebra_datepicker/js/zebra_datepicker_es.js"></script>
 	<script src="js/alertify/alertify.min.js"></script>
 	<script src="js/spin.min.js"></script>

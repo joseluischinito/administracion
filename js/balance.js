@@ -11,6 +11,13 @@ $(function(){
 
 	$('#fecha_inicio,#fecha_fin').Zebra_DatePicker();
 
+	/***/
+
+	$('#cuentas-t').selectbox();
+
+	$('input[type=radio]').picker();
+
+	/****/
 
 	$('#crear-balance').on('submit',function(e){
 		e.preventDefault();
