@@ -1,22 +1,32 @@
 <?php
-	require_once('libs/db/MysqliDb.php');
+	
 	require_once('header.php');
+	require_once('libs/db/MysqliDb.php');
 
+	if(!isset($_SESSION['admon_usu']) || empty($_SESSION['admon_usu']) || !isset($_GET['id']) || empty($_GET['id'])){
+		header('Location: ./');
+		exit();
+	}
+	
 	$db = new MysqliDb();
+	$balance = $db->query('SELECT balance.id AS id, balance.fecha_inicio_periodo AS inicio,  balance.fecha_fin_periodo AS fin, empresa.nombre AS empresa FROM balance,empresa WHERE empresa.id = balance.empresa_id AND balance.id = '.$_GET['id'].'');
 
+
+	if(count($balance)<=0)
+		header('Location: ./');	
 
 ?>
 
 <section id="add-form">
 
-	<h1 id="h1-t">Editar Balance General <?= $_GET['id'] ?></h1>
+	<h1 id="h1-t">Editar Balance General > Agregar operacion </h1>
 
 
 
 	<section id="info-estado">
-		<p><strong>Empresa: </strong> </p>
-		<p><strong>Fecha inicio: </strong> </p>
-		<p><strong>Fecha fin: </strong> </p>
+		<p><strong>Empresa: </strong> <?= $balance[0]['empresa'] ?> </p>
+		<p><strong>Fecha inicio: </strong> <?= date('d M y',strtotime($balance[0]['inicio'])) ?> </p>
+		<p><strong>Fecha fin: </strong> <?= date('d M y',strtotime($balance[0]['fin'])) ?> </p>
 	</section>
 
 	<section id="add-movimiento">	
@@ -33,7 +43,7 @@
 					</optgroup>
 				</select>
 
-				<input type="text" id="monto-i" name="cantidad">
+				<input type="text" id="monto-i" name="cantidad" placeholder="Cantidad" />
 			</section>
 
 			<section id="cargo-t">
@@ -43,6 +53,7 @@
 				<label for="abono-c">Abono</label>
 			</section>
 
+			<input type="hidden" name="id_b" value="<?= $balance[0]['id'] ?>"/>
 			<input type="submit" style="margin-right:0%" value="Agregar" />
 
 		</form>
