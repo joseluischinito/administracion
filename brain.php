@@ -212,7 +212,7 @@ function balance_agregar_operacion(){
 
 	$op_data = array(
 		'cargo_abono' => $_POST['cargo_abono'],
-		'monto_operacion' => $_POST['cantidad'] ,
+		'monto_operacion' =>  $_POST['cargo_abono']==2?-$_POST['cantidad']:$_POST['cantidad'],
 		'cuenta_id' => $_POST['cuenta'],
 		'balance_id' => $_POST['id_b']
 	);

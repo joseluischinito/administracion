@@ -11,7 +11,23 @@
 	$db = new MysqliDb();
 	$balance = $db->query('SELECT balance.id AS id, balance.fecha_inicio_periodo AS inicio,  balance.fecha_fin_periodo AS fin, empresa.nombre AS empresa FROM balance,empresa WHERE empresa.id = balance.empresa_id AND balance.id = '.$_GET['id'].'');
 
+	$db->where('padre_id',1);
+	$activos_circulantes = $db->get('cuenta');
 
+	$db->where('padre_id',2);
+	$activos_fijos = $db->get('cuenta');
+
+	$db->where('padre_id',3);
+	$activos_diferidos = $db->get('cuenta');
+
+	$db->where('padre_id',4);
+	$pasivo_c = $db->get('cuenta');
+
+	$db->where('padre_id',5);
+	$pasivo_l = $db->get('cuenta');
+
+	$db->where('padre_id',6);
+	$capital = $db->get('cuenta');
 
 	if(count($balance)<=0)
 		header('Location: ./');	
@@ -36,11 +52,35 @@
 
 			<section id="cuenta-m">
 				<select id="cuentas-t">
-					<optgroup label="Activos Fijos">
-						<option value="1">Juar Juar</option>
+					<optgroup label="Activos Cirulantes">
+						<?php foreach ($activos_circulantes as $ac) {
+							echo '<option value="'.$ac['id'].'">'.$ac['nombre'].'</option>';
+						} ?>
 					</optgroup>
-					<optgroup label="Pasivos Corto Plazo">
-						<option value="2">Jear Jear</option>
+					<optgroup label="Activos Fijos">
+						<?php foreach ($activos_fijos as $ac) {
+							echo '<option value="'.$ac['id'].'">'.$ac['nombre'].'</option>';
+						} ?>
+					</optgroup>
+					<optgroup label="Activos Diferidos">
+						<?php foreach ($activos_diferidos as $ac) {
+							echo '<option value="'.$ac['id'].'">'.$ac['nombre'].'</option>';
+						} ?>
+					</optgroup>
+					<optgroup label="Pasivos a Corto Plazo">
+						<?php foreach ($pasivo_c as $ac) {
+							echo '<option value="'.$ac['id'].'">'.$ac['nombre'].'</option>';
+						} ?>
+					</optgroup>
+					<optgroup label="Pasivos a Largo Plazo">
+						<?php foreach ($pasivo_l as $ac) {
+							echo '<option value="'.$ac['id'].'">'.$ac['nombre'].'</option>';
+						} ?>
+					</optgroup>
+					<optgroup label="Capital">
+						<?php foreach ($capital as $ac) {
+							echo '<option value="'.$ac['id'].'">'.$ac['nombre'].'</option>';
+						} ?>
 					</optgroup>
 				</select>
 

@@ -243,6 +243,65 @@ header nav ul li ul{
 	color: #FFF !important;
 }
 
+.row{
+	display: block;
+	cursor: pointer;
+	background: #1d71a7;
+	padding: 0.3em 0;
+}
+
+#rows-t{
+	display: block;
+	background: #103f75;
+	padding: 0.3em 0;
+}
+
+.row:hover{
+	background: #17549a;
+}
+
+.id-col{
+	display: inline-block;
+	width: 5%;
+	margin-left: 2%
+}
+
+.empresa-col{
+	display: inline-block;
+	width: 30%;
+}
+
+.inicio-col{
+	display: inline-block;
+	width: 20%;
+}
+
+.fin-col{
+	display: inline-block;
+	width: 20%;
+}
+
+.btns-col{
+	float: right;
+	width: 7%;
+	margin-left: 1%
+}
+
+.btns-col a:hover{
+	opacity: 0.5;
+}
+
+.btns-col a:last-child{
+	margin-left: 0.5em;
+}
+
+
+
+
+
+
+/***/
+
 #cuenta-m{
 	display: block;
 	margin-top: 1.3em;

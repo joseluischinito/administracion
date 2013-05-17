@@ -37,14 +37,15 @@ $(function(){
 			type: self.attr('method'),
 			url: self.attr('action'),
 			data: self.serialize(),
-			//dataType: 'json',
+			dataType: 'json',
 			success: function(s){
 				
+				console.log(s)
 
 				$('#popup').fadeOut();
 				console.log(s)
 				if(s.estado === 1){
-					self.reset();
+					self.children('#monto-i').val('');
 					alertify.success('Operacion agregada');
 				}else if(s.estado === 2){
 					alertify.error(s.msg);
